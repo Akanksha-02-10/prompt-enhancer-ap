@@ -1,4 +1,24 @@
 import streamlit as st
+import base64
+
+def add_background_from_url(image_url):
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("{image_url}");
+             background-attachment: fixed;
+             background-size: cover;
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+# Example usage:
+add_background_from_url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+
+import streamlit as st
 from openai import OpenAI
 
 # UI layout
